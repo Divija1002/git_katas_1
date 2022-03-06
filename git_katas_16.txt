@@ -1,0 +1,203 @@
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd git-katas
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas (master)
+$ cd basic-stashing
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing (master)
+$ source setup.sh
+Initialized empty Git repository in D:/git-katas/basic-stashing/exercise/.git/
+Successfully configured local username and email
+Successfully disable local GPG signing
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) fbc4b90] Initial commit
+ 2 files changed, 1 insertion(+)
+ create mode 100644 file.txt
+ create mode 100644 fix.txt
+warning: LF will be replaced by CRLF in bug.txt.
+The file will have its original line endings in your working directory
+[master 1f80601] add bug.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 bug.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+Successfully unset local username and email
+Successfully unset local GPG signing
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ ls
+bug.txt  file.txt  fix.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+        modified:   fix.txt
+
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git log --oneline --graph
+* 1f80601 (HEAD -> master) add bug.txt
+* fbc4b90 Initial commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git stash
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in fix.txt.
+The file will have its original line endings in your working directory
+Saved working directory and index state WIP on master: 1f80601 add bug.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ ls
+bug.txt  file.txt  fix.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git log --oneline --graph
+* 1f80601 (HEAD -> master) add bug.txt
+* fbc4b90 Initial commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git stash list
+stash@{0}: WIP on master: 1f80601 add bug.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ vim bug.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ cat bug.txt
+this file has some typos
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git add bug.txt
+warning: LF will be replaced by CRLF in bug.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git commit -m "basic-stashing-1"
+[master 0d13a1a] basic-stashing-1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git stash pop
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+        modified:   fix.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (2ee2b800533c4652eeca908830815423a1ca88d4)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ ls
+bug.txt  file.txt  fix.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+        modified:   fix.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git stash lis
+fatal: unknown subcommand: lis
+
+usage: git stash list [<options>]
+   or: git stash show [<options>] [<stash>]
+   or: git stash drop [-q|--quiet] [<stash>]
+   or: git stash ( pop | apply ) [--index] [-q|--quiet] [<stash>]
+   or: git stash branch <branchname> [<stash>]
+   or: git stash clear
+   or: git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--quiet]
+                 [-u|--include-untracked] [-a|--all] [-m|--message <message>]
+                 [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                 [--] [<pathspec>...]]
+   or: git stash save [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-q|--quiet]
+                 [-u|--include-untracked] [-a|--all] [<message>]
+
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git stash list
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git stash
+Saved working directory and index state WIP on master: 0d13a1a basic-stashing-1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git reset --hard --HEAD
+error: unknown option `HEAD'
+usage: git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]
+   or: git reset [-q] [<tree-ish>] [--] <pathspec>...
+   or: git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<tree-ish>]
+   or: git reset --patch [<tree-ish>] [--] [<pathspec>...]
+   or: DEPRECATED: git reset [-q] [--stdin [-z]] [<tree-ish>]
+
+    -q, --quiet           be quiet, only report errors
+    --mixed               reset HEAD and index
+    --soft                reset only HEAD
+    --hard                reset HEAD, index and working tree
+    --merge               reset HEAD, index and working tree
+    --keep                reset HEAD but keep local changes
+    --recurse-submodules[=<reset>]
+                          control recursive updating of submodules
+    -p, --patch           select hunks interactively
+    -N, --intent-to-add   record only the fact that removed paths will be added later
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+    -z                    DEPRECATED (use --pathspec-file-nul instead): paths are separated with NUL character
+    --stdin               DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
+
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git reset --hard HEAD
+HEAD is now at 0d13a1a basic-stashing-1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git stash apply --index
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+        modified:   fix.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git stash drop
+Dropped refs/stash@{0} (9414c886c65189554c74d4d77828b94d13830744)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git stash list
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-stashing/exercise (master)
+$ git log --oneline --graph
+* 0d13a1a (HEAD -> master) basic-stashing-1
+* 1f80601 add bug.txt
+* fbc4b90 Initial commit
+

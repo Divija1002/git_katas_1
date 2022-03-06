@@ -1,0 +1,68 @@
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd git-katas
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas (master)
+$ cd basic-cleaning
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-cleaning (master)
+$ source setup.sh
+Initialized empty Git repository in D:/git-katas/basic-cleaning/exercise/.git/
+warning: LF will be replaced by CRLF in README.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/myapp.c.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/myapp.h.
+The file will have its original line endings in your working directory
+[master (root-commit) 00fbe6b] C code for my app
+ 3 files changed, 3 insertions(+)
+ create mode 100644 README.txt
+ create mode 100644 src/myapp.c
+ create mode 100644 src/myapp.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-cleaning/exercise (master)
+$ ls -R
+.:
+README.txt  README.txt~  obj/  src/
+
+./obj:
+a.out  myapp.o  mylib.a  mylib.o
+
+./src:
+myapp.c  myapp.c~  myapp.h  mylib.c  oldfile.c~
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-cleaning/exercise (master)
+$ git clean -n
+Would remove README.txt~
+Would remove src/myapp.c~
+Would remove src/mylib.c
+Would remove src/oldfile.c~
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-cleaning/exercise (master)
+$ git add src/mylib.c
+warning: LF will be replaced by CRLF in src/mylib.c.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-cleaning/exercise (master)
+$ git clean -n
+Would remove README.txt~
+Would remove src/myapp.c~
+Would remove src/oldfile.c~
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-cleaning/exercise (master)
+$ git clean -n -d
+Would remove README.txt~
+Would remove obj/
+Would remove src/myapp.c~
+Would remove src/oldfile.c~
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-cleaning/exercise (master)
+$ git clean -f -d
+Removing README.txt~
+Removing obj/
+Removing src/myapp.c~
+Removing src/oldfile.c~
+

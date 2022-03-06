@@ -1,0 +1,130 @@
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master)
+$ git branch
+  Mergesort-Impl
+* master
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master)
+$ git merge Mergesort-Impl
+Auto-merging mergesort.py
+CONFLICT (content): Merge conflict in mergesort.py
+Automatic merge failed; fix conflicts and then commit the result.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master|MERGING)
+$ ls
+mergesort.py
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git mergetool --tool=vimdiff
+Merging:
+mergesort.py
+
+Normal merge conflict for 'mergesort.py':
+  {local}: modified file
+  {remote}: modified file
+4 files to edit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master|MERGING)
+$
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   mergesort.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        mergesort.py.orig
+
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git merge Mergesort-Impl
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git add .
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git commit -m "merge-mergesort-1"
+[master 87a88db] merge-mergesort-1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master)
+$ git merge Mergesort-Impl
+Already up to date.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master)
+$ rm -rf .git
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort/exercise (master)
+$ cd
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:/git-katas/merge-mergesort
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort (master)
+$ ls
+README.md  base.py  exercise/  lefty.py  righty.py  setup.ps1  setup.sh*
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../.gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        exercise/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort (master)
+$ git add .
+warning: CRLF will be replaced by LF in merge-mergesort/exercise/mergesort.py.
+The file will have its original line endings in your working directory
+warning: CRLF will be replaced by LF in merge-mergesort/exercise/mergesort.py.orig.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort (master)
+$ git commit -m "merge-mergeosort final commit"
+[master bedddb6] merge-mergeosort final commit
+ 2 files changed, 122 insertions(+)
+ create mode 100644 merge-mergesort/exercise/mergesort.py
+ create mode 100644 merge-mergesort/exercise/mergesort.py.orig
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../.gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/merge-mergesort (master)
+$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 883 bytes | 883.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/Divija1002/git_katas_1
+   dcc9c55..bedddb6  master -> master

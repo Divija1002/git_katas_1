@@ -1,0 +1,239 @@
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd git-katas
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas (master)
+$ cd 3-way-merge
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge (master)
+$ source setup.sh
+Initialized empty Git repository in D:/git-katas/3-way-merge/exercise/.git/
+[master (root-commit) 95405da] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[master d9dbad0] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git branch greeting
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git checkout greeting
+Switched to branch 'greeting'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (greeting)
+$ cat greeting.txt
+hello
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (greeting)
+$ echo "my favorite greeting" > greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (greeting)
+$ git status
+On branch greeting
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   greeting.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (greeting)
+$ git add greeting.txt
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (greeting)
+$ git commit -m "3-way-merge-1"
+[greeting 5f02998] 3-way-merge-1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (greeting)
+$ git switch master
+Switched to branch 'master'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ touch README.md
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ echo "This repository is a collection of Git exercises. The concept is stolen without shame from Schauderhaft.de. Unfortunately, they have not maintained the system - and we need more good Git exercises.
+
+The exercises are designed for use when we are teaching Git courses. You should be able to use them as self-contained exercises that will allow you to keep your Git skills sharp.
+
+Exercises starting with basic are entry-level - other exercises vary greatly in difficulty.
+
+To get an overview of the exercises in here look in Overview.md.
+
+Feel free to use these exercises, that's why they're public" > README.md
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ cat README.md
+This repository is a collection of Git exercises. The concept is stolen without shame from Schauderhaft.de. Unfortunately, they have not maintained the system - and we need more good Git exercises.
+
+The exercises are designed for use when we are teaching Git courses. You should be able to use them as self-contained exercises that will allow you to keep your Git skills sharp.
+
+Exercises starting with basic are entry-level - other exercises vary greatly in difficulty.
+
+To get an overview of the exercises in here look in Overview.md.
+
+Feel free to use these exercises, that's why they're public
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git add README.md
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git commit -m "3-way-merge-2"
+[master 5264ea4] 3-way-merge-2
+ 1 file changed, 9 insertions(+)
+ create mode 100644 README.md
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git log --oneline --graph --all
+* 5264ea4 (HEAD -> master) 3-way-merge-2
+| * 5f02998 (greeting) 3-way-merge-1
+|/
+* d9dbad0 Add content to greeting.txt
+* 95405da Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git diff greeting master
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..982a881
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,9 @@
++This repository is a collection of Git exercises. The concept is stolen without shame from Schauderhaft.de. Unfortunately, they have not maintained the system - and we need more good Git exercises.
++
++The exercises are designed for use when we are teaching Git courses. You should be able to use them as self-contained exercises that will allow you to keep your Git skills sharp.
++
++Exercises starting with basic are entry-level - other exercises vary greatly in difficulty.
++
++To get an overview of the exercises in here look in Overview.md.
++
++Feel free to use these exercises, that's why they're public
+diff --git a/greeting.txt b/greeting.txt
+index f702802..ce01362 100644
+--- a/greeting.txt
++++ b/greeting.txt
+@@ -1 +1 @@
+-my favorite greeting
++hello
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git merge greeting
+Merge made by the 'ort' strategy.
+ greeting.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ cat greeting.txt
+my favorite greeting
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ cat README.md
+This repository is a collection of Git exercises. The concept is stolen without shame from Schauderhaft.de. Unfortunately, they have not maintained the system - and we need more good Git exercises.
+
+The exercises are designed for use when we are teaching Git courses. You should be able to use them as self-contained exercises that will allow you to keep your Git skills sharp.
+
+Exercises starting with basic are entry-level - other exercises vary greatly in difficulty.
+
+To get an overview of the exercises in here look in Overview.md.
+
+Feel free to use these exercises, that's why they're public
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git log --oneline --graph --sll
+fatal: unrecognized argument: --sll
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git log --oneline --graph --all
+*   a139569 (HEAD -> master) Merge branch 'greeting' part of git katas 3-way-merge task
+|\
+| * 5f02998 (greeting) 3-way-merge-1
+* | 5264ea4 3-way-merge-2
+|/
+* d9dbad0 Add content to greeting.txt
+* 95405da Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ rm -rf .git
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ git commit -m "3-way-merge last commit"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../../.gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ./
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge/exercise (master)
+$ cd
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:/git-katas/3-way-merge
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../.gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        exercise/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge (master)
+$ git add .
+warning: CRLF will be replaced by LF in 3-way-merge/exercise/greeting.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge (master)
+$ git commit -m "3-way-merge-final-commit"
+[master 94c06e2] 3-way-merge-final-commit
+ 2 files changed, 10 insertions(+)
+ create mode 100644 3-way-merge/exercise/README.md
+ create mode 100644 3-way-merge/exercise/greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/3-way-merge (master)
+$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 861 bytes | 215.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Divija1002/git_katas_1
+   dc97674..94c06e2  master -> master
+

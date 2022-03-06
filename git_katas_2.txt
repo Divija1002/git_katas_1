@@ -1,0 +1,239 @@
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd git-katas
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas (master)
+$ cd basic-staging
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging (master)
+$ source setup.sh
+Initialized empty Git repository in D:/git-katas/basic-staging/exercise/.git/
+Successfully configured local username and email
+Successfully disable local GPG signing
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) f0c4580] 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+Successfully unset local username and email
+Successfully unset local GPG signing
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ cat file.txt
+1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ echo 2 > file.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git diff
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+diff --git a/file.txt b/file.txt
+index d00491f..0cfbf08 100644
+--- a/file.txt
++++ b/file.txt
+@@ -1 +1 @@
+-1
++2
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git diff --staged
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git add file.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git diff
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git diff --staged
+diff --git a/file.txt b/file.txt
+index d00491f..0cfbf08 100644
+--- a/file.txt
++++ b/file.txt
+@@ -1 +1 @@
+-1
++2
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ echo 3 > file.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git diff
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+diff --git a/file.txt b/file.txt
+index 0cfbf08..00750ed 100644
+--- a/file.txt
++++ b/file.txt
+@@ -1 +1 @@
+-2
++3
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git diff --staged
+diff --git a/file.txt b/file.txt
+index d00491f..0cfbf08 100644
+--- a/file.txt
++++ b/file.txt
+@@ -1 +1 @@
+-1
++2
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git restore --staged file.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git add file.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git commit "basic-staging-1"
+error: pathspec 'basic-staging-1' did not match any file(s) known to git
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git commit -m "basic-staging-1"
+[master 3f30139] basic-staging-1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git log
+commit 3f30139fe078969f33f5550fbe13f04045efd18c (HEAD -> master)
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 05:21:18 2022 +0530
+
+    basic-staging-1
+
+commit f0c45802db805a964543faa00aeb420c13774a56
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Sat Mar 5 05:13:24 2022 +0530
+
+    1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ echo 4 > file.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ cat file.txt
+4
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git restore file.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ cat file.txt
+3
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git commit -m "final commit"
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging/exercise (master)
+$ cd D:/git-katas/basic-staging
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging (master)
+$ ls
+README.md  exercise/  setup.ps1  setup.sh*
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging (master)
+$ git add .
+warning: adding embedded git repository: basic-staging/exercise
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> basic-staging/exercise
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached basic-staging/exercise
+hint:
+hint: See "git help submodule" for more information.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging (master)
+$ git commit -m "basic-staging-final-commit"
+[master 7cc1bf7] basic-staging-final-commit
+ 1 file changed, 1 insertion(+)
+ create mode 160000 basic-staging/exercise
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../.gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-staging (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 400 bytes | 400.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Divija1002/git_katas_1
+   6420f60..7cc1bf7  master -> master
+

@@ -1,0 +1,153 @@
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git branch
+* master
+  second-branch
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git branch mybranch
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git branch
+* master
+  mybranch
+  second-branch
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ touch file1.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ echo "Divija" > file1.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ git add file1.txt
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ git commit -m "basic-branching-1"
+[mybranch 170bd0b] basic-branching-1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ git log --oneline --graph
+* 170bd0b (HEAD -> mybranch) basic-branching-1
+* 47b215f (second-branch, master) dummy commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ git switch master
+Switched to branch 'master'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git log --oneline --graph
+* 47b215f (HEAD -> master, second-branch) dummy commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ touch file2.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git commit -m "basic-branching-2"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git log --oneline --graph --all
+* 170bd0b (mybranch) basic-branching-1
+* 47b215f (HEAD -> master, second-branch) dummy commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git add file2.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git commit -m "basic-branching-2"
+[master 9da5e41] basic-branching-2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file2.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git log --oneline --graph --all
+* 9da5e41 (HEAD -> master) basic-branching-2
+| * 170bd0b (mybranch) basic-branching-1
+|/
+* 47b215f (second-branch) dummy commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ ls
+dummy.txt  file1.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ git diff mybranch master
+diff --git a/file1.txt b/file1.txt
+deleted file mode 100644
+index f97cdc7..0000000
+--- a/file1.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-Divija
+diff --git a/file2.txt b/file2.txt
+new file mode 100644
+index 0000000..e69de29
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ git commit -m "final commit"
+On branch mybranch
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching/exercise (mybranch)
+$ cd D:/git-katas/basic-branching
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching (master)
+$ ls
+README.md  exercise/  setup.ps1  setup.sh*
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching (master)
+$ git add .
+warning: adding embedded git repository: basic-branching/exercise
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> basic-branching/exercise
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached basic-branching/exercise
+hint:
+hint: See "git help submodule" for more information.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching (master)
+$ git commit -m "basic-branching-final-commit"
+[master 685e812] basic-branching-final-commit
+ 1 file changed, 1 insertion(+)
+ create mode 160000 basic-branching/exercise
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-branching (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 404 bytes | 404.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Divija1002/git_katas_1
+   7cc1bf7..685e812  master -> master

@@ -1,0 +1,137 @@
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd git-katas
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas (master)
+$ cd reorder-the-history
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reorder-the-history (master)
+$ source setup.sh
+Initialized empty Git repository in D:/git-katas/reorder-the-history/remote/
+Cloning into 'exercise'...
+warning: You appear to have cloned an empty repository.
+done.
+warning: LF will be replaced by CRLF in foo.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) 4b3a1c3] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 foo.txt
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 219 bytes | 21.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/git-katas/reorder-the-history/./remote
+ * [new branch]      master -> master
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 161 bytes | 161.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/git-katas/reorder-the-history/./remote
+ * [new tag]         START -> START
+warning: LF will be replaced by CRLF in file1.
+The file will have its original line endings in your working directory
+[master 1c08d4a] file1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1
+warning: LF will be replaced by CRLF in file9.
+The file will have its original line endings in your working directory
+[master 5f7b01e] file9
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file9
+warning: LF will be replaced by CRLF in file8.
+The file will have its original line endings in your working directory
+[master 5dcc4d9] file8
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file8
+warning: LF will be replaced by CRLF in file3.
+The file will have its original line endings in your working directory
+[master c4a81fc] file3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3
+warning: LF will be replaced by CRLF in file4.
+The file will have its original line endings in your working directory
+[master aba6f4c] file4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file4
+warning: LF will be replaced by CRLF in file5.
+The file will have its original line endings in your working directory
+[master 68717cf] file5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file5
+warning: LF will be replaced by CRLF in file2.
+The file will have its original line endings in your working directory
+[master cd8f77c] file2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2
+warning: LF will be replaced by CRLF in file6.
+The file will have its original line endings in your working directory
+[master 21fc8fb] file6
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file6
+warning: LF will be replaced by CRLF in file7.
+The file will have its original line endings in your working directory
+[master bd92d57] file7
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file7
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reorder-the-history/exercise (master)
+$ git log --oneline --graph
+* bd92d57 (HEAD -> master) file7
+* 21fc8fb file6
+* cd8f77c file2
+* 68717cf file5
+* aba6f4c file4
+* c4a81fc file3
+* 5dcc4d9 file8
+* 5f7b01e file9
+* 1c08d4a file1
+* 4b3a1c3 (tag: START, origin/master) Initial commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reorder-the-history/exercise (master)
+$ git reflog
+bd92d57 (HEAD -> master) HEAD@{0}: commit: file7
+21fc8fb HEAD@{1}: commit: file6
+cd8f77c HEAD@{2}: commit: file2
+68717cf HEAD@{3}: commit: file5
+aba6f4c HEAD@{4}: commit: file4
+c4a81fc HEAD@{5}: commit: file3
+5dcc4d9 HEAD@{6}: commit: file8
+5f7b01e HEAD@{7}: commit: file9
+1c08d4a HEAD@{8}: commit: file1
+4b3a1c3 (tag: START, origin/master) HEAD@{9}: commit (initial): Initial commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reorder-the-history/exercise (master)
+$ git rebase -i <after[this-commit>
+bash: syntax error near unexpected token `newline'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reorder-the-history/exercise (master)
+$ git rebase -i <after-this-commit>
+bash: syntax error near unexpected token `newline'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reorder-the-history/exercise (master)
+$ git rebase -i after-this-commit
+fatal: invalid upstream 'after-this-commit'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reorder-the-history/exercise (master)
+$ git rebase -i <after-this-commit>
+bash: syntax error near unexpected token `newline'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reorder-the-history/exercise (master)
+$ git rebase -i 4b3a1c3
+Successfully rebased and updated refs/heads/master.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reorder-the-history/exercise (master)
+$ git log --oneline --graph
+* 01c99c5 (HEAD -> master) file1
+* 8760425 file2
+* 96465c8 file3
+* b9241f7 file4
+* b7241d2 file5
+* 0e21e93 file6
+* 0e686c9 file7
+* 1c345d3 file8
+* 5b6086d file9
+* 4b3a1c3 (tag: START, origin/master) Initial commit

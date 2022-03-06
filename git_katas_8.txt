@@ -1,0 +1,143 @@
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd git-katas
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas (master)
+$ cd rebase-branch
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch (master)
+$ source setup.sh
+Initialized empty Git repository in D:/git-katas/rebase-branch/exercise/.git/
+[master (root-commit) 3611463] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[master 7bfb5bd] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+Switched to a new branch 'uppercase'
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[uppercase 85a20fa] Change greeting to uppercase
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Switched to branch 'master'
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+[master 3a1f80e] Add readme
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (master)
+$ git branch
+* master
+  uppercase
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (master)
+$ git log
+commit 3a1f80e64ef35b48d04ced00ef86cd7ff0365cb5 (HEAD -> master)
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 13:57:36 2022 +0530
+
+    Add readme
+
+commit 7bfb5bd17bae95f885b8facaf5e97c56b1dc9e9c
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 13:57:35 2022 +0530
+
+    Add content to greeting.txt
+
+commit 3611463dd9556965044f8147df6482c1a193969f
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 13:57:34 2022 +0530
+
+    Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (master)
+$ git log --oneline --graph --all
+* 3a1f80e (HEAD -> master) Add readme
+| * 85a20fa (uppercase) Change greeting to uppercase
+|/
+* 7bfb5bd Add content to greeting.txt
+* 3611463 Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (master)
+$ git checkout uppercase
+Switched to branch 'uppercase'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (uppercase)
+$ git log --oneline --graph --all
+* 3a1f80e (master) Add readme
+| * 85a20fa (HEAD -> uppercase) Change greeting to uppercase
+|/
+* 7bfb5bd Add content to greeting.txt
+* 3611463 Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (uppercase)
+$ git rebase master
+Successfully rebased and updated refs/heads/uppercase.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (uppercase)
+$ git switch master
+Switched to branch 'master'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (master)
+$ git merge uppercase
+Updating 3a1f80e..c4bf26c
+Fast-forward
+ greeting.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (master)
+$ git log --oneline --graph --all
+* c4bf26c (HEAD -> master, uppercase) Change greeting to uppercase
+* 3a1f80e Add readme
+* 7bfb5bd Add content to greeting.txt
+* 3611463 Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (master)
+$ git commit -m "rebase-branch-1"
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (master)
+$ rm -rf .git
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch/exercise (master)
+$ cd
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:/git-katas/rebase-branch
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch (master)
+$ ls
+README.md  exercise/  setup.ps1  setup.sh*
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch (master)
+$ git add .
+warning: CRLF will be replaced by LF in rebase-branch/exercise/README.md.
+The file will have its original line endings in your working directory
+warning: CRLF will be replaced by LF in rebase-branch/exercise/greeting.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch (master)
+$ git commit -m "rebase-branch-final-commit"
+[master d8407a1] rebase-branch-final-commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 rebase-branch/exercise/README.md
+ create mode 100644 rebase-branch/exercise/greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/rebase-branch (master)
+$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 526 bytes | 526.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Divija1002/git_katas_1
+   bedddb6..d8407a1  master -> master
+

@@ -1,0 +1,272 @@
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd reset
+bash: cd: reset: No such file or directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd git-katas
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas (master)
+$ cd reset
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset (master)
+$ source setup.sh
+Initialized empty Git repository in D:/git-katas/reset/exercise/.git/
+warning: LF will be replaced by CRLF in 1.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) a807ab6] 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 1.txt
+warning: LF will be replaced by CRLF in 2.txt.
+The file will have its original line endings in your working directory
+[master 0808a51] 2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 2.txt
+warning: LF will be replaced by CRLF in 3.txt.
+The file will have its original line endings in your working directory
+[master dbbd24d] 3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 3.txt
+warning: LF will be replaced by CRLF in 4.txt.
+The file will have its original line endings in your working directory
+[master 4c8cd4c] 4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 4.txt
+warning: LF will be replaced by CRLF in 5.txt.
+The file will have its original line endings in your working directory
+[master 98ad1b5] 5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 5.txt
+warning: LF will be replaced by CRLF in 6.txt.
+The file will have its original line endings in your working directory
+[master 56a7612] 6
+ 1 file changed, 1 insertion(+)
+ create mode 100644 6.txt
+warning: LF will be replaced by CRLF in 7.txt.
+The file will have its original line endings in your working directory
+[master dfa013b] 7
+ 1 file changed, 1 insertion(+)
+ create mode 100644 7.txt
+warning: LF will be replaced by CRLF in 8.txt.
+The file will have its original line endings in your working directory
+[master 0241c50] 8
+ 1 file changed, 1 insertion(+)
+ create mode 100644 8.txt
+warning: LF will be replaced by CRLF in 9.txt.
+The file will have its original line endings in your working directory
+[master 1c994c6] 9
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9.txt
+warning: LF will be replaced by CRLF in 10.txt.
+The file will have its original line endings in your working directory
+[master c4f4bed] 10
+ 1 file changed, 1 insertion(+)
+ create mode 100644 10.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ ls
+1.txt  10.txt  2.txt  3.txt  4.txt  5.txt  6.txt  7.txt  8.txt  9.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git log
+commit c4f4bedf31c9c84e8f4dd9c5d2490fd19ea34af8 (HEAD -> master)
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 20:29:46 2022 +0530
+
+    10
+
+commit 1c994c66b2ae8ee1c6e313d30828577b15de46c9
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 20:29:45 2022 +0530
+
+    9
+
+commit 0241c503a732143824b795d30c6fb0e641e6894b
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 20:29:45 2022 +0530
+
+    8
+
+commit dfa013b7c3ec4eb949d8728faf67802d77f6d427
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 20:29:45 2022 +0530
+
+    7
+
+commit 56a7612b7e1879e66afe2dbaeb6151b819f385ad
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 20:29:44 2022 +0530
+
+    6
+
+commit 98ad1b51a0b432dee2047a2c19a20183127fbc3e
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 20:29:43 2022 +0530
+
+    5
+
+commit 4c8cd4ce4989fdbd23dc4140d1431a5beb07ec81
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 20:29:43 2022 +0530
+
+    4
+
+commit dbbd24d1d6fedcb855880a359f8ae935f5969579
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 20:29:43 2022 +0530
+
+    3
+
+commit 0808a51193a0e0a749b5ebe6e78d97ac0a235da2
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 20:29:42 2022 +0530
+
+    2
+
+commit a807ab6bc7e0c74f33bdfb385437760f920d8154
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sat Mar 5 20:29:42 2022 +0530
+
+    1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git reset --mixed HEAD~1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ ls
+1.txt  10.txt  2.txt  3.txt  4.txt  5.txt  6.txt  7.txt  8.txt  9.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        10.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git log --oneline
+1c994c6 (HEAD -> master) 9
+0241c50 8
+dfa013b 7
+56a7612 6
+98ad1b5 5
+4c8cd4c 4
+dbbd24d 3
+0808a51 2
+a807ab6 1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git ls-files -s
+100644 d00491fd7e5bb6fa28c517a0bb32b8b506539d4d 0       1.txt
+100644 0cfbf08886fca9a91cb753ec8734c84fcbe52c9f 0       2.txt
+100644 00750edc07d6415dcc07ae0351e9397b0222b7ba 0       3.txt
+100644 b8626c4cff2849624fb67f87cd0ad72b163671ad 0       4.txt
+100644 7ed6ff82de6bcc2a78243fc9c54d3ef5ac14da69 0       5.txt
+100644 1e8b314962144c26d5e0e50fd29d2ca327864913 0       6.txt
+100644 7f8f011eb73d6043d2e6db9d2c101195ae2801f2 0       7.txt
+100644 45a4fb75db864000d01701c0f7a51864bd4daabf 0       8.txt
+100644 ec635144f60048986bc560c5576355344005e6e7 0       9.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git reset --soft HEAD~1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   9.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        10.txt
+
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git log --oneline
+0241c50 (HEAD -> master) 8
+dfa013b 7
+56a7612 6
+98ad1b5 5
+4c8cd4c 4
+dbbd24d 3
+0808a51 2
+a807ab6 1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git ls-files -s
+100644 d00491fd7e5bb6fa28c517a0bb32b8b506539d4d 0       1.txt
+100644 0cfbf08886fca9a91cb753ec8734c84fcbe52c9f 0       2.txt
+100644 00750edc07d6415dcc07ae0351e9397b0222b7ba 0       3.txt
+100644 b8626c4cff2849624fb67f87cd0ad72b163671ad 0       4.txt
+100644 7ed6ff82de6bcc2a78243fc9c54d3ef5ac14da69 0       5.txt
+100644 1e8b314962144c26d5e0e50fd29d2ca327864913 0       6.txt
+100644 7f8f011eb73d6043d2e6db9d2c101195ae2801f2 0       7.txt
+100644 45a4fb75db864000d01701c0f7a51864bd4daabf 0       8.txt
+100644 ec635144f60048986bc560c5576355344005e6e7 0       9.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git reset --hard HEAD~1
+HEAD is now at dfa013b 7
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git log --oneline
+dfa013b (HEAD -> master) 7
+56a7612 6
+98ad1b5 5
+4c8cd4c 4
+dbbd24d 3
+0808a51 2
+a807ab6 1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        10.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git revert HEAD~1
+[master 39c64e2] Revert "6"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 6.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git ststud
+git: 'ststud' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        10.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/reset/exercise (master)
+$ git log --oneline
+39c64e2 (HEAD -> master) Revert "6"
+dfa013b 7
+56a7612 6
+98ad1b5 5
+4c8cd4c 4
+dbbd24d 3
+0808a51 2
+a807ab6 1
