@@ -1,0 +1,141 @@
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ git branch feature/uppercase
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ git switch feature/uppercase
+Switched to branch 'feature/uppercase'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (feature/uppercase)
+$ git status
+On branch feature/uppercase
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (feature/uppercase)
+$ echo GREETING > greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (feature/uppercase)
+$ git add greeting.txt
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (feature/uppercase)
+$ git commit -m "ff-merge-1"
+[feature/uppercase 005c5cb] ff-merge-1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (feature/uppercase)
+$ git branch
+* feature/uppercase
+  master
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (feature/uppercase)
+$ git log --oneline --graph --all
+* 005c5cb (HEAD -> feature/uppercase) ff-merge-1
+* 5a8a1d6 (master) Add content to greeting.txt
+* 599764f Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (feature/uppercase)
+$ git switch master
+Switched to branch 'master'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ cat greeting.txt
+hello
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ git diff feature/uppercase master
+diff --git a/greeting.txt b/greeting.txt
+index 1e4307a..ce01362 100644
+--- a/greeting.txt
++++ b/greeting.txt
+@@ -1 +1 @@
+-GREETING
++hello
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ git merge feature/uppercase
+Updating 5a8a1d6..005c5cb
+Fast-forward
+ greeting.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ cat greeting.txt
+GREETING
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ git branch
+  feature/uppercase
+* master
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ git branch -d feature/uppercase
+Deleted branch feature/uppercase (was 005c5cb).
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ git branch
+* master
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ git commit -m "ff-merge-completed"
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ cd D:/git-katas/ff-merge
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge (master)
+$ ls
+README.md  exercise/  setup.ps1  setup.sh*
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge (master)
+$ rm -rf .git
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge (master)
+$ cd d/git-katas/ff-merge/ff-merge
+bash: cd: d/git-katas/ff-merge/ff-merge: No such file or directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge (master)
+$ cd D:/git-katas/ff-merge/ff-merge/exercise
+bash: cd: D:/git-katas/ff-merge/ff-merge/exercise: No such file or directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge (master)
+$ cd D:/git-katas/ff-merge/exercise
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ rm -rf .git
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge/exercise (master)
+$ cd D:/git-katas/ff-merge
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge (master)
+$ ls
+README.md  exercise/  setup.ps1  setup.sh*
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge (master)
+$ git add .
+warning: CRLF will be replaced by LF in ff-merge/exercise/greeting.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge (master)
+$ git commit -m "ff-merge-final-commit"
+[master dc97674] ff-merge-final-commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ff-merge/exercise/greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/ff-merge (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 465 bytes | 465.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Divija1002/git_katas_1
+   685e812..dc97674  master -> master

@@ -1,0 +1,154 @@
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd git-katas
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas (master)
+$ cd basic-revert
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert (master)
+$ source setup.sh
+Initialized empty Git repository in D:/git-katas/basic-revert/exercise/.git/
+Successfully configured local username and email
+Successfully disable local GPG signing
+[master (root-commit) 1ea3fa7] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: LF will be replaced by CRLF in credentials.txt.
+The file will have its original line endings in your working directory
+[master 2b7322c] Add credentials to repository
+ 1 file changed, 1 insertion(+)
+ create mode 100644 credentials.txt
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[master 2cb1fe8] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in greeting.txt.
+The file will have its original line endings in your working directory
+[master 6f76d6d] Overwrite greeting.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Successfully unset local username and email
+Successfully unset local GPG signing
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ git log --decorate --oneline
+6f76d6d (HEAD -> master) Overwrite greeting.txt
+2cb1fe8 Add content to greeting.txt
+2b7322c Add credentials to repository
+1ea3fa7 Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ cat greeting.txt
+This should have been appended to the original content, rather than overwriting it.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ git revert HEAD
+[master 4be90d4] Revert "Overwrite greeting.txt"
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ git log --decorate --oneline
+4be90d4 (HEAD -> master) Revert "Overwrite greeting.txt"
+6f76d6d Overwrite greeting.txt
+2cb1fe8 Add content to greeting.txt
+2b7322c Add credentials to repository
+1ea3fa7 Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ cat greeting.txt
+Original file content
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ ls
+credentials.txt  greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ git log --decorate --oneline
+4be90d4 (HEAD -> master) Revert "Overwrite greeting.txt"
+6f76d6d Overwrite greeting.txt
+2cb1fe8 Add content to greeting.txt
+2b7322c Add credentials to repository
+1ea3fa7 Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ git revert 2b7322c
+[master fabd82e] Revert "Add credentials to repository"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 credentials.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ git log --decorate --oneline
+fabd82e (HEAD -> master) Revert "Add credentials to repository"
+4be90d4 Revert "Overwrite greeting.txt"
+6f76d6d Overwrite greeting.txt
+2cb1fe8 Add content to greeting.txt
+2b7322c Add credentials to repository
+1ea3fa7 Add file greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ ls
+greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ git show 2b7322c
+commit 2b7322ccb0e22268e1d2569d5377f6ab77022107
+Author: git-katas trainer bot <git-katas@example.com>
+Date:   Sat Mar 5 15:53:51 2022 +0530
+
+    Add credentials to repository
+
+diff --git a/credentials.txt b/credentials.txt
+new file mode 100644
+index 0000000..8995708
+--- /dev/null
++++ b/credentials.txt
+@@ -0,0 +1 @@
++supersecretpassword
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ git commit -m "basic-revert-commit"
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ rm -rf .git
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert/exercise (master)
+$ cd
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:/git-katas/basic-revert
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert (master)
+$ ls
+README.md  exercise/  setup.ps1  setup.sh*
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert (master)
+$ git add .
+warning: CRLF will be replaced by LF in basic-revert/exercise/greeting.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert (master)
+$ git commit -m "basic-revert-final-commit"
+[master f3c01dd] basic-revert-final-commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 basic-revert/exercise/greeting.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/basic-revert (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 483 bytes | 483.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Divija1002/git_katas_1
+   d8407a1..f3c01dd  master -> master

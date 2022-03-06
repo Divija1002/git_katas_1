@@ -1,0 +1,87 @@
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd git-katas
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas (master)
+$ cd squashing
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/squashing (master)
+$ source setup.sh
+Initialized empty Git repository in D:/git-katas/squashing/exercise/.git/
+[master (root-commit) 715a82f] initial file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 alsoafile.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master b695ec1] Add relevant fact
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 3b694ba] Add more relevancy
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 1a583e3] most relevant!
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 7938823] add prime directive
+ 1 file changed, 1 insertion(+)
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+[master 78cc47b] add the word!
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/squashing/exercise (master)
+$ git log --oneline --graph
+* 78cc47b (HEAD -> master) add the word!
+* 7938823 add prime directive
+* 1a583e3 most relevant!
+* 3b694ba Add more relevancy
+* b695ec1 Add relevant fact
+* 715a82f initial file
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/squashing/exercise (master)
+$ git rebase -i HEAD~5
+[detached HEAD 2f4e140] SQUASHING 5 COMMITS INTO ONE
+ Date: Sun Mar 6 12:34:04 2022 +0530
+ 1 file changed, 5 insertions(+)
+ create mode 100644 file.txt
+Successfully rebased and updated refs/heads/master.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/squashing/exercise (master)
+$ git log
+commit 2f4e140c90200815b1f9fd18d50f4e9d03de3bb7 (HEAD -> master)
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sun Mar 6 12:34:04 2022 +0530
+
+    SQUASHING 5 COMMITS INTO ONE
+
+    we can squash 5 commits into one using git rebase -i HEAD~5 and replacing the pick on second and subsequent commits with squash.here i am explaning how instead of why because at the moment i do not know why. Make sure to mention why and nothow.
+
+    Add relevant fact
+
+    Add more relevancy
+
+    most relevant!
+
+    add prime directive
+
+    add the word!
+
+commit 715a82f86c12c4bf7a0acbfd5990d55e9742d856
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sun Mar 6 12:34:04 2022 +0530
+
+    initial file
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/squashing/exercise (master)
+$
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/squashing/exercise (master)
+$ git log --oneline --graph
+* 2f4e140 (HEAD -> master) SQUASHING 5 COMMITS INTO ONE
+* 715a82f initial file

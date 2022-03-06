@@ -1,0 +1,314 @@
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:
+
+HP@LAPTOP-E68OG1TT MINGW64 /d
+$ cd git-katas
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas (master)
+$ cd submodules
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules (master)
+$ ./setup.sh
+Initialized empty Git repository in D:/git-katas/submodules/exercise/remote/
+Cloning into 'component'...
+warning: You appear to have cloned an empty repository.
+done.
+[master (root-commit) e5d2836] Touch component header
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 component.h
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/git-katas/submodules/exercise/remote
+ * [new branch]      master -> master
+Initialized empty Git repository in D:/git-katas/submodules/exercise/product/.git/
+[master (root-commit) 8b98172] Touch product header
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 product.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules (master)
+$ ls
+README.md  exercise/  setup.ps1  setup.sh*
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules (master)
+$ cd exercise
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise (master)
+$ ls
+component/  product/  remote/
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise (master)
+$ cd product
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ git submodule add ../remote include
+Cloning into 'D:/git-katas/submodules/exercise/product/include'...
+done.
+warning: LF will be replaced by CRLF in .gitmodules.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ ls
+include/  product.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitmodules
+        new file:   include
+
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ cd include
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ ls
+component.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ cd D:/git-katas/submodules/exercise/product
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ git diff --cached
+diff --git a/.gitmodules b/.gitmodules
+new file mode 100644
+index 0000000..79d5c92
+--- /dev/null
++++ b/.gitmodules
+@@ -0,0 +1,3 @@
++[submodule "include"]
++       path = include
++       url = ../remote
+diff --git a/include b/include
+new file mode 160000
+index 0000000..e5d2836
+--- /dev/null
++++ b/include
+@@ -0,0 +1 @@
++Subproject commit e5d283636b6d4746b555d58a5bec4557c48a6bde
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ git add .
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ git commit -m "commit in prof=duct repository"
+[master 99ba991] commit in prof=duct repository
+ 2 files changed, 4 insertions(+)
+ create mode 100644 .gitmodules
+ create mode 160000 include
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ cd D:/git-katas/submodules/exercise/component
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/component (master)
+$ ls
+component.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/component (master)
+$ vim component.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/component (master)
+$ cat component.h
+change made to component
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/component (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   component.h
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/component (master)
+$ git add .
+warning: LF will be replaced by CRLF in component.h.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/component (master)
+$ git commit -m "component-commit"
+[master 1752a9a] component-commit
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/component (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 271 bytes | 271.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/git-katas/submodules/exercise/remote
+   e5d2836..1752a9a  master -> master
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/component (master)
+$ cd D:/git-katas/submodules/exercise/product
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ cd include
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 251 bytes | 1024 bytes/s, done.
+From D:/git-katas/submodules/exercise/remote
+   e5d2836..1752a9a  master     -> origin/master
+Updating e5d2836..1752a9a
+Fast-forward
+ component.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ ls
+component.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ cat component.h
+change made to component
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ cd D:/git-katas/submodules/exercise/product
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   include (new commits)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ git diff
+diff --git a/include b/include
+index e5d2836..1752a9a 160000
+--- a/include
++++ b/include
+@@ -1 +1 @@
+-Subproject commit e5d283636b6d4746b555d58a5bec4557c48a6bde
++Subproject commit 1752a9a1d43a8b1fe5af97d4cbdcdffcf8461b41
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ cd include
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ ls
+component.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ vim component.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ git push origin maater
+error: src refspec maater does not match any
+error: failed to push some refs to 'D:/git-katas/submodules/exercise/remote'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ git push origin master
+Everything up-to-date
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ cat component.h
+change made to component
+change made to component in include
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product/include (master)
+$ cd D:/git-katas/submodules/exercise
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise (master)
+$ git clone prduct product_alpha
+fatal: repository 'prduct' does not exist
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise (master)
+$ git clone product product_alpha
+Cloning into 'product_alpha'...
+done.
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise (master)
+$ cd product_alpha
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha (master)
+$ ls
+include/  product.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha (master)
+$ git log --oneline
+99ba991 (HEAD -> master, origin/master, origin/HEAD) commit in prof=duct repository
+8b98172 Touch product header
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha (master)
+$ cd include
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include (master)
+$ ls
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include (master)
+$ git submodule init
+Submodule 'include' (D:/git-katas/submodules/exercise/remote) registered for path './'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include (master)
+$ ls
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include (master)
+$ git submodule update
+Cloning into 'D:/git-katas/submodules/exercise/product_alpha/include'...
+done.
+Submodule path './': checked out 'e5d283636b6d4746b555d58a5bec4557c48a6bde'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include ((e5d2836...))
+$ ls
+component.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include ((e5d2836...))
+$ cat component.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include ((e5d2836...))
+$ cd D:/git-katas/submodules/exercise/product
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ git add .
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ git commit -m "cmmit changes in product"
+[master 280db8d] cmmit changes in product
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product (master)
+$ cd D:/git-katas/submodules/exercise/product_alpha
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha (master)
+$ git submodule update --remote
+Submodule path 'include': checked out '1752a9a1d43a8b1fe5af97d4cbdcdffcf8461b41'
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha (master)
+$ cd include
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include ((1752a9a...))
+$ ls
+component.h
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include ((1752a9a...))
+$ cat component.h
+change made to component
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include ((1752a9a...))
+$ git submodule status
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha/include ((1752a9a...))
+$ cd D:/git-katas/submodules/exercise/product_alpha
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/submodules/exercise/product_alpha (master)
+$ git submodule status
++1752a9a1d43a8b1fe5af97d4cbdcdffcf8461b41 include (heads/master)
