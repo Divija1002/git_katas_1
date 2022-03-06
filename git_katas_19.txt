@@ -1,0 +1,180 @@
+
+HP@LAPTOP-E68OG1TT MINGW64 ~
+$ cd D:/git-katas/git-tag
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag (master)
+$ source setup.sh
+Initialized empty Git repository in D:/git-katas/git-tag/exercise/.git/
+warning: LF will be replaced by CRLF in dummy.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) e4dd02a] dummy commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dummy.txt
+warning: LF will be replaced by CRLF in dummy.txt.
+The file will have its original line endings in your working directory
+[master d9c2655] adding more content to dummy.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git tag
+dummy
+dummy2
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git commit -m "new commit"
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git log --oneline
+d9c2655 (HEAD -> master, tag: dummy2) adding more content to dummy.txt
+e4dd02a (tag: dummy) dummy commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ ls
+dummy.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ vim dummy.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   dummy.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git add .
+warning: LF will be replaced by CRLF in dummy.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git commit -m "new commit"
+[master 3bd7e0c] new commit
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git tag -a v1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git show
+commit 3bd7e0ca6d93f3a3d1e52b6e4e59c0748fcf930f (HEAD -> master, tag: v1)
+Author: Divija <divija.amaram@gmail.com>
+Date:   Sun Mar 6 20:39:20 2022 +0530
+
+    new commit
+
+diff --git a/dummy.txt b/dummy.txt
+index bb98416..63cac0e 100644
+--- a/dummy.txt
++++ b/dummy.txt
+@@ -1 +1,2 @@
+ dummy2
++adding new content
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git tag --list
+dummy
+dummy2
+v1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git tag --list v1
+v1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git tag -n
+dummy           dummy commit
+dummy2          don't worry, be happy
+v1              annotated tag 1
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git log --oneline
+3bd7e0c (HEAD -> master, tag: v1) new commit
+d9c2655 (tag: dummy2) adding more content to dummy.txt
+e4dd02a (tag: dummy) dummy commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ vim dummy.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git add .
+warning: LF will be replaced by CRLF in dummy.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git commit -m "commit-1"
+[master 333cf5d] commit-1
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ vim dummy.txt
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git add .
+warning: LF will be replaced by CRLF in dummy.txt.
+The file will have its original line endings in your working directory
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git commit -m "commit-1"
+[master a1f1a03] commit-1
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git log --oneline
+a1f1a03 (HEAD -> master) commit-1
+333cf5d commit-1
+3bd7e0c (tag: v1) new commit
+d9c2655 (tag: dummy2) adding more content to dummy.txt
+e4dd02a (tag: dummy) dummy commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git tag -a v2 333cf5d
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git tag
+dummy
+dummy2
+v1
+v2
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git log --oneline
+a1f1a03 (HEAD -> master) commit-1
+333cf5d (tag: v2) commit-1
+3bd7e0c (tag: v1) new commit
+d9c2655 (tag: dummy2) adding more content to dummy.txt
+e4dd02a (tag: dummy) dummy commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git tag -d v1
+Deleted tag 'v1' (was 5032fa5)
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git tag
+dummy
+dummy2
+v2
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git log --oneline
+a1f1a03 (HEAD -> master) commit-1
+333cf5d (tag: v2) commit-1
+3bd7e0c new commit
+d9c2655 (tag: dummy2) adding more content to dummy.txt
+e4dd02a (tag: dummy) dummy commit
+
+HP@LAPTOP-E68OG1TT MINGW64 /d/git-katas/git-tag/exercise (master)
+$ git tag -n
+dummy           dummy commit
+dummy2          don't worry, be happy
+v2              taggina a arbitrary commit
