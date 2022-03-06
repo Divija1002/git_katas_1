@@ -1,0 +1,3 @@
+Initial content of the file
+some changes I made and staged
+some changes I made and did not stage yet
