@@ -7,3 +7,6 @@
 [submodule "basic-commits/basic-commits"]
 	path = basic-commits/basic-commits
 	url = https://github.com/Divija1002/basic-commits.git
+[submodule "basic-staging/basic-staging"]
+	path = basic-staging/basic-staging
+	url = https://github.com/Divija1002/basic-staging.git
