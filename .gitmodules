@@ -37,3 +37,6 @@
 [submodule "basic-cleaning/basic-cleaning"]
 	path = basic-cleaning/basic-cleaning
 	url = https://github.com/Divija1002/basic-cleaning.git
+[submodule "amend/amend"]
+	path = amend/amend
+	url = https://github.com/Divija1002/amend.git
