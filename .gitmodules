@@ -22,3 +22,6 @@
 [submodule "merge-conflict/merge-conflict"]
 	path = merge-conflict/merge-conflict
 	url = https://github.com/Divija1002/merge-conflict.git
+[submodule "merge-mergesort/merge-mergesort"]
+	path = merge-mergesort/merge-mergesort
+	url = https://github.com/Divija1002/merge-mergesort.git
