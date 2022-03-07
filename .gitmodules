@@ -10,3 +10,6 @@
 [submodule "basic-staging/basic-staging"]
 	path = basic-staging/basic-staging
 	url = https://github.com/Divija1002/basic-staging.git
+[submodule "basic-branching/basic-branching"]
+	path = basic-branching/basic-branching
+	url = https://github.com/Divija1002/basic-branching.git
