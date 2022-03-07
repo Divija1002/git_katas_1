@@ -40,3 +40,6 @@
 [submodule "amend/amend"]
 	path = amend/amend
 	url = https://github.com/Divija1002/amend.git
+[submodule "reorder-the-history/reorder-the-history"]
+	path = reorder-the-history/reorder-the-history
+	url = https://github.com/Divija1002/reorder-the-history.git
