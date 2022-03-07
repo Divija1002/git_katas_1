@@ -28,3 +28,6 @@
 [submodule "rebase-branch/rebase-branch"]
 	path = rebase-branch/rebase-branch
 	url = https://github.com/Divija1002/rebase-branch.git
+[submodule "basic-revert/basic-revert"]
+	path = basic-revert/basic-revert
+	url = https://github.com/Divija1002/basic-revert.git
