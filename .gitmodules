@@ -4,3 +4,6 @@
 [submodule "reset/exercisenew"]
 	path = reset/exercisenew
 	url = https://github.com/Divija1002/git_katas_1.git
+[submodule "basic-commits/basic-commits"]
+	path = basic-commits/basic-commits
+	url = https://github.com/Divija1002/basic-commits.git
