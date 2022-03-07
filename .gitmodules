@@ -31,3 +31,6 @@
 [submodule "basic-revert/basic-revert"]
 	path = basic-revert/basic-revert
 	url = https://github.com/Divija1002/basic-revert.git
+[submodule "reset/reset_new"]
+	path = reset/reset_new
+	url = https://github.com/Divija1002/reset_new.git
