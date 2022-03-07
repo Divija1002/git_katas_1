@@ -25,3 +25,6 @@
 [submodule "merge-mergesort/merge-mergesort"]
 	path = merge-mergesort/merge-mergesort
 	url = https://github.com/Divija1002/merge-mergesort.git
+[submodule "rebase-branch/rebase-branch"]
+	path = rebase-branch/rebase-branch
+	url = https://github.com/Divija1002/rebase-branch.git
