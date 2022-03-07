@@ -13,3 +13,6 @@
 [submodule "basic-branching/basic-branching"]
 	path = basic-branching/basic-branching
 	url = https://github.com/Divija1002/basic-branching.git
+[submodule "ff-merge/ff-merge"]
+	path = ff-merge/ff-merge
+	url = https://github.com/Divija1002/ff-merge.git
