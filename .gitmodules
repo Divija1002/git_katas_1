@@ -16,3 +16,6 @@
 [submodule "ff-merge/ff-merge"]
 	path = ff-merge/ff-merge
 	url = https://github.com/Divija1002/ff-merge.git
+[submodule "3-way-merge/3-way-merge"]
+	path = 3-way-merge/3-way-merge
+	url = https://github.com/Divija1002/3-way-merge.git
