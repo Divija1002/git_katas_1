@@ -34,3 +34,6 @@
 [submodule "reset/reset_new"]
 	path = reset/reset_new
 	url = https://github.com/Divija1002/reset_new.git
+[submodule "basic-cleaning/basic-cleaning"]
+	path = basic-cleaning/basic-cleaning
+	url = https://github.com/Divija1002/basic-cleaning.git
