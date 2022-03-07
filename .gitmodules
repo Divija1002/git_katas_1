@@ -19,3 +19,6 @@
 [submodule "3-way-merge/3-way-merge"]
 	path = 3-way-merge/3-way-merge
 	url = https://github.com/Divija1002/3-way-merge.git
+[submodule "merge-conflict/merge-conflict"]
+	path = merge-conflict/merge-conflict
+	url = https://github.com/Divija1002/merge-conflict.git
