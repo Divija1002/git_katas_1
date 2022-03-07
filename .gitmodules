@@ -43,3 +43,6 @@
 [submodule "reorder-the-history/reorder-the-history"]
 	path = reorder-the-history/reorder-the-history
 	url = https://github.com/Divija1002/reorder-the-history.git
+[submodule "squashing/squashing"]
+	path = squashing/squashing
+	url = https://github.com/Divija1002/squashing.git
